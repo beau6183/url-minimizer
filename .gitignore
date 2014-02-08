@@ -1,0 +1,27 @@
+# osx noise
+.DS_Store
+profile
+
+# xcode noise
+.settings
+build/*
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+
+# svn & cvs
+.svn
+CVS
+mongo.htpasswd
+logs/access.log
+logs/error.log
+
+#misc
+.private
+mongo.*
+

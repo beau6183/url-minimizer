@@ -1,0 +1,22 @@
+Order deny,allow
+Allow from all
+
+Options +FollowSymLinks
+
+<IfModule mod_php4.c> 
+  php_value session.auto_start 0 
+</IfModule> 
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^.*\.ttly\.me$ [NC]
+RewriteRule ^(.*)$ http://ttly.me/$1 [L,R]
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+#RewriteCond %{REQUEST_FILENAME} !-F
+#RewriteCond %{REQUEST_FILENAME} !-H
+#RewriteCond %{REQUEST_FILENAME} !-I
+#RewriteCond %{REQUEST_FILENAME} !-L
+#RewriteCond %{REQUEST_FILENAME} !-U
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?l=$1 [L]
